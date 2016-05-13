@@ -1346,7 +1346,7 @@
                     "type": "string"
                 }
             }
-        },
+        }, 
         "TenantRequestDTO": {
             "type": "object",
             "properties": {
