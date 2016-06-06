@@ -8,8 +8,8 @@ import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
 import com.hevelian.identity.client.model.TenantDomainDTO;
-import com.hevelian.identity.client.model.PrimitiveResultstring;
 import com.hevelian.identity.client.model.TenantRequestDTO;
+import com.hevelian.identity.client.model.PrimitiveResultstring;
 import com.hevelian.identity.client.model.Tenant;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-06T07:47:22.284+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-06T08:19:35.649+02:00")
 public class TenantcontrollerApi {
   private ApiClient apiClient;
 
