@@ -10,25 +10,25 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-12T08:17:28.344+02:00")
-public class PrimitiveResultstring   {
+public class PrimaryUser   {
   
-  private String result = null;
+  private String name = null;
 
   
   /**
    **/
-  public PrimitiveResultstring result(String result) {
-    this.result = result;
+  public PrimaryUser name(String name) {
+    this.name = name;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("result")
-  public String getResult() {
-    return result;
+  @JsonProperty("name")
+  public String getName() {
+    return name;
   }
-  public void setResult(String result) {
-    this.result = result;
+  public void setName(String name) {
+    this.name = name;
   }
 
   
@@ -41,21 +41,21 @@ public class PrimitiveResultstring   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrimitiveResultstring primitiveResultstring = (PrimitiveResultstring) o;
-    return Objects.equals(this.result, primitiveResultstring.result);
+    PrimaryUser primaryUser = (PrimaryUser) o;
+    return Objects.equals(this.name, primaryUser.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result);
+    return Objects.hash(name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrimitiveResultstring {\n");
+    sb.append("class PrimaryUser {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

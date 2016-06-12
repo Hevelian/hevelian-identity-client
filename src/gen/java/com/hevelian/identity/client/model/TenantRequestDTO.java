@@ -2,6 +2,7 @@ package com.hevelian.identity.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.hevelian.identity.client.model.UserRequestDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -9,11 +10,12 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-06T08:19:35.649+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-12T08:17:28.344+02:00")
 public class TenantRequestDTO   {
   
   private Boolean active = null;
   private String domain = null;
+  private UserRequestDTO tenantAdmin = null;
 
   
   /**
@@ -50,6 +52,23 @@ public class TenantRequestDTO   {
   }
 
   
+  /**
+   **/
+  public TenantRequestDTO tenantAdmin(UserRequestDTO tenantAdmin) {
+    this.tenantAdmin = tenantAdmin;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("tenantAdmin")
+  public UserRequestDTO getTenantAdmin() {
+    return tenantAdmin;
+  }
+  public void setTenantAdmin(UserRequestDTO tenantAdmin) {
+    this.tenantAdmin = tenantAdmin;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +80,13 @@ public class TenantRequestDTO   {
     }
     TenantRequestDTO tenantRequestDTO = (TenantRequestDTO) o;
     return Objects.equals(this.active, tenantRequestDTO.active) &&
-        Objects.equals(this.domain, tenantRequestDTO.domain);
+        Objects.equals(this.domain, tenantRequestDTO.domain) &&
+        Objects.equals(this.tenantAdmin, tenantRequestDTO.tenantAdmin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, domain);
+    return Objects.hash(active, domain, tenantAdmin);
   }
 
   @Override
@@ -76,6 +96,7 @@ public class TenantRequestDTO   {
     
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    tenantAdmin: ").append(toIndentedString(tenantAdmin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

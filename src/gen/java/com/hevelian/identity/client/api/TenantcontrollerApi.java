@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-06T08:19:35.649+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-12T08:17:28.344+02:00")
 public class TenantcontrollerApi {
   private ApiClient apiClient;
 
@@ -268,12 +268,12 @@ public class TenantcontrollerApi {
    * @return Tenant
    * @throws ApiException if fails to make API call
    */
-  public Tenant getTenantUsingGET(TenantDomainDTO tenantDomainDTO) throws ApiException {
+  public Tenant getTenantUsingPOST(TenantDomainDTO tenantDomainDTO) throws ApiException {
     Object localVarPostBody = tenantDomainDTO;
     
     // verify the required parameter 'tenantDomainDTO' is set
     if (tenantDomainDTO == null) {
-      throw new ApiException(400, "Missing the required parameter 'tenantDomainDTO' when calling getTenantUsingGET");
+      throw new ApiException(400, "Missing the required parameter 'tenantDomainDTO' when calling getTenantUsingPOST");
     }
     
     // create path and map variables
@@ -304,7 +304,7 @@ public class TenantcontrollerApi {
 
     
     GenericType<Tenant> localVarReturnType = new GenericType<Tenant>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
     
   }
   
@@ -312,10 +312,9 @@ public class TenantcontrollerApi {
    * updateTenant
    * 
    * @param tenant tenant (required)
-   * @return Tenant
    * @throws ApiException if fails to make API call
    */
-  public Tenant updateTenantUsingPOST(TenantRequestDTO tenant) throws ApiException {
+  public void updateTenantUsingPOST(TenantRequestDTO tenant) throws ApiException {
     Object localVarPostBody = tenant;
     
     // verify the required parameter 'tenant' is set
@@ -350,8 +349,7 @@ public class TenantcontrollerApi {
     String[] localVarAuthNames = new String[] {  };
 
     
-    GenericType<Tenant> localVarReturnType = new GenericType<Tenant>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
     
   }
   

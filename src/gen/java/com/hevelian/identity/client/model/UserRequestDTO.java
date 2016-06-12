@@ -10,25 +10,43 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-12T08:17:28.344+02:00")
-public class PrimitiveResultstring   {
+public class UserRequestDTO   {
   
-  private String result = null;
+  private String name = null;
+  private String password = null;
 
   
   /**
    **/
-  public PrimitiveResultstring result(String result) {
-    this.result = result;
+  public UserRequestDTO name(String name) {
+    this.name = name;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("result")
-  public String getResult() {
-    return result;
+  @JsonProperty("name")
+  public String getName() {
+    return name;
   }
-  public void setResult(String result) {
-    this.result = result;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   **/
+  public UserRequestDTO password(String password) {
+    this.password = password;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("password")
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
   }
 
   
@@ -41,21 +59,23 @@ public class PrimitiveResultstring   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrimitiveResultstring primitiveResultstring = (PrimitiveResultstring) o;
-    return Objects.equals(this.result, primitiveResultstring.result);
+    UserRequestDTO userRequestDTO = (UserRequestDTO) o;
+    return Objects.equals(this.name, userRequestDTO.name) &&
+        Objects.equals(this.password, userRequestDTO.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result);
+    return Objects.hash(name, password);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrimitiveResultstring {\n");
+    sb.append("class UserRequestDTO {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
   }

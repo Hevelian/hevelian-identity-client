@@ -8,14 +8,14 @@ import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
 import com.hevelian.identity.client.model.Role;
-import com.hevelian.identity.client.model.User;
+import com.hevelian.identity.client.model.PrimaryUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-06T08:19:35.649+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-12T08:17:28.344+02:00")
 public class UsercontrollerApi {
   private ApiClient apiClient;
 
@@ -166,7 +166,7 @@ public class UsercontrollerApi {
    * @param user user (optional)
    * @throws ApiException if fails to make API call
    */
-  public void addRoleUsingPOST1(User user) throws ApiException {
+  public void addRoleUsingPOST1(PrimaryUser user) throws ApiException {
     Object localVarPostBody = user;
     
     // create path and map variables
@@ -449,10 +449,10 @@ public class UsercontrollerApi {
   /**
    * listUsers
    * 
-   * @return List<User>
+   * @return List<PrimaryUser>
    * @throws ApiException if fails to make API call
    */
-  public List<User> listUsersUsingGET() throws ApiException {
+  public List<PrimaryUser> listUsersUsingGET() throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -482,7 +482,7 @@ public class UsercontrollerApi {
     String[] localVarAuthNames = new String[] {  };
 
     
-    GenericType<List<User>> localVarReturnType = new GenericType<List<User>>() {};
+    GenericType<List<PrimaryUser>> localVarReturnType = new GenericType<List<PrimaryUser>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
     
   }

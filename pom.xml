@@ -19,7 +19,7 @@
 		<log4j.version>2.5</log4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<yaml.file>${project.basedir}/src/main/resources/identity-service.yaml</yaml.file>
+		<yaml.file>${project.basedir}/src/main/resources/identity-service.json</yaml.file>
 		<generated-sources-path>${project.build.directory}/generated-sources</generated-sources-path>
 		<generated-sources-java-path>src/gen/java</generated-sources-java-path>
 		<version.swagger.codegen>2.1.6</version.swagger.codegen>
