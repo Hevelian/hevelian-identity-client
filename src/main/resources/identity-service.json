@@ -1527,6 +1527,22 @@
 				}
 			}
 		},
+		"Role": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		},
+		"Policy": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		},
 		"PrimitiveResultÂ«stringÂ»": {
 			"type": "object",
 			"properties": {

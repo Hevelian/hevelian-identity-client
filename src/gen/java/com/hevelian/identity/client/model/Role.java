@@ -9,44 +9,26 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-06T08:19:35.649+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-12T08:23:42.221+02:00")
 public class Role   {
   
-  private Boolean active = null;
-  private String domain = null;
+  private String name = null;
 
   
   /**
    **/
-  public Role active(Boolean active) {
-    this.active = active;
+  public Role name(String name) {
+    this.name = name;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("active")
-  public Boolean getActive() {
-    return active;
+  @JsonProperty("name")
+  public String getName() {
+    return name;
   }
-  public void setActive(Boolean active) {
-    this.active = active;
-  }
-
-  
-  /**
-   **/
-  public Role domain(String domain) {
-    this.domain = domain;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("domain")
-  public String getDomain() {
-    return domain;
-  }
-  public void setDomain(String domain) {
-    this.domain = domain;
+  public void setName(String name) {
+    this.name = name;
   }
 
   
@@ -60,13 +42,12 @@ public class Role   {
       return false;
     }
     Role role = (Role) o;
-    return Objects.equals(this.active, role.active) &&
-        Objects.equals(this.domain, role.domain);
+    return Objects.equals(this.name, role.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, domain);
+    return Objects.hash(name);
   }
 
   @Override
@@ -74,8 +55,7 @@ public class Role   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Role {\n");
     
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
