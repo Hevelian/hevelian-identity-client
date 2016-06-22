@@ -10,25 +10,25 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-22T08:33:27.695+02:00")
-public class PrimitiveResultboolean   {
+public class RoleRequestDTO   {
   
-  private Boolean result = null;
+  private String name = null;
 
   
   /**
    **/
-  public PrimitiveResultboolean result(Boolean result) {
-    this.result = result;
+  public RoleRequestDTO name(String name) {
+    this.name = name;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("result")
-  public Boolean getResult() {
-    return result;
+  @JsonProperty("name")
+  public String getName() {
+    return name;
   }
-  public void setResult(Boolean result) {
-    this.result = result;
+  public void setName(String name) {
+    this.name = name;
   }
 
   
@@ -41,21 +41,21 @@ public class PrimitiveResultboolean   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrimitiveResultboolean primitiveResultboolean = (PrimitiveResultboolean) o;
-    return Objects.equals(this.result, primitiveResultboolean.result);
+    RoleRequestDTO roleRequestDTO = (RoleRequestDTO) o;
+    return Objects.equals(this.name, roleRequestDTO.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result);
+    return Objects.hash(name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrimitiveResultboolean {\n");
+    sb.append("class RoleRequestDTO {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

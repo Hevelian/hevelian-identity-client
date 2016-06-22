@@ -4,20 +4,23 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-22T08:33:27.695+02:00")
-public class Role   {
+public class UpdateUserRolesRequestDTO   {
   
   private String name = null;
+  private List<String> newRoles = new ArrayList<String>();
 
   
   /**
    **/
-  public Role name(String name) {
+  public UpdateUserRolesRequestDTO name(String name) {
     this.name = name;
     return this;
   }
@@ -32,6 +35,23 @@ public class Role   {
   }
 
   
+  /**
+   **/
+  public UpdateUserRolesRequestDTO newRoles(List<String> newRoles) {
+    this.newRoles = newRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("newRoles")
+  public List<String> getNewRoles() {
+    return newRoles;
+  }
+  public void setNewRoles(List<String> newRoles) {
+    this.newRoles = newRoles;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -41,21 +61,23 @@ public class Role   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Role role = (Role) o;
-    return Objects.equals(this.name, role.name);
+    UpdateUserRolesRequestDTO updateUserRolesRequestDTO = (UpdateUserRolesRequestDTO) o;
+    return Objects.equals(this.name, updateUserRolesRequestDTO.name) &&
+        Objects.equals(this.newRoles, updateUserRolesRequestDTO.newRoles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, newRoles);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Role {\n");
+    sb.append("class UpdateUserRolesRequestDTO {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    newRoles: ").append(toIndentedString(newRoles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

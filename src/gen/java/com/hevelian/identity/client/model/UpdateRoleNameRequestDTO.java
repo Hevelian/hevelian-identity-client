@@ -10,14 +10,15 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-22T08:33:27.695+02:00")
-public class Role   {
+public class UpdateRoleNameRequestDTO   {
   
   private String name = null;
+  private String newName = null;
 
   
   /**
    **/
-  public Role name(String name) {
+  public UpdateRoleNameRequestDTO name(String name) {
     this.name = name;
     return this;
   }
@@ -32,6 +33,23 @@ public class Role   {
   }
 
   
+  /**
+   **/
+  public UpdateRoleNameRequestDTO newName(String newName) {
+    this.newName = newName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("newName")
+  public String getNewName() {
+    return newName;
+  }
+  public void setNewName(String newName) {
+    this.newName = newName;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -41,21 +59,23 @@ public class Role   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Role role = (Role) o;
-    return Objects.equals(this.name, role.name);
+    UpdateRoleNameRequestDTO updateRoleNameRequestDTO = (UpdateRoleNameRequestDTO) o;
+    return Objects.equals(this.name, updateRoleNameRequestDTO.name) &&
+        Objects.equals(this.newName, updateRoleNameRequestDTO.newName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, newName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Role {\n");
+    sb.append("class UpdateRoleNameRequestDTO {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    newName: ").append(toIndentedString(newName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

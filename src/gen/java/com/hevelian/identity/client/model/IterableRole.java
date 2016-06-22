@@ -1,35 +1,14 @@
 package com.hevelian.identity.client.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 
 
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-22T08:33:27.695+02:00")
-public class PrimitiveResultboolean   {
+public class IterableRole   {
   
-  private Boolean result = null;
-
-  
-  /**
-   **/
-  public PrimitiveResultboolean result(Boolean result) {
-    this.result = result;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("result")
-  public Boolean getResult() {
-    return result;
-  }
-  public void setResult(Boolean result) {
-    this.result = result;
-  }
 
   
 
@@ -41,21 +20,19 @@ public class PrimitiveResultboolean   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrimitiveResultboolean primitiveResultboolean = (PrimitiveResultboolean) o;
-    return Objects.equals(this.result, primitiveResultboolean.result);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result);
+    return Objects.hash();
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrimitiveResultboolean {\n");
+    sb.append("class IterableRole {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }

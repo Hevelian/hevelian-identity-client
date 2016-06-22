@@ -4,21 +4,25 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-22T08:33:27.695+02:00")
-public class User   {
+public class NewUserRequestDTO   {
   
   private Boolean enabled = null;
   private String name = null;
+  private String password = null;
+  private List<String> roles = new ArrayList<String>();
 
   
   /**
    **/
-  public User enabled(Boolean enabled) {
+  public NewUserRequestDTO enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -35,7 +39,7 @@ public class User   {
   
   /**
    **/
-  public User name(String name) {
+  public NewUserRequestDTO name(String name) {
     this.name = name;
     return this;
   }
@@ -50,6 +54,40 @@ public class User   {
   }
 
   
+  /**
+   **/
+  public NewUserRequestDTO password(String password) {
+    this.password = password;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("password")
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  
+  /**
+   **/
+  public NewUserRequestDTO roles(List<String> roles) {
+    this.roles = roles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("roles")
+  public List<String> getRoles() {
+    return roles;
+  }
+  public void setRoles(List<String> roles) {
+    this.roles = roles;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,23 +97,27 @@ public class User   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    User user = (User) o;
-    return Objects.equals(this.enabled, user.enabled) &&
-        Objects.equals(this.name, user.name);
+    NewUserRequestDTO newUserRequestDTO = (NewUserRequestDTO) o;
+    return Objects.equals(this.enabled, newUserRequestDTO.enabled) &&
+        Objects.equals(this.name, newUserRequestDTO.name) &&
+        Objects.equals(this.password, newUserRequestDTO.password) &&
+        Objects.equals(this.roles, newUserRequestDTO.roles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, name);
+    return Objects.hash(enabled, name, password, roles);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class User {\n");
+    sb.append("class NewUserRequestDTO {\n");
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("}");
     return sb.toString();
   }
