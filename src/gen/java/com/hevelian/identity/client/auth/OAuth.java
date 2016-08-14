@@ -23,51 +23,29 @@
  */
 
 
-package com.hevelian.identity.client.model;
+package com.hevelian.identity.client.auth;
 
-import java.util.Objects;
+import com.hevelian.identity.client.Pair;
 
+import java.util.Map;
+import java.util.List;
 
-/**
- * IterableUser
- */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:13:25.923+02:00")
-public class IterableUser   {
+public class OAuth implements Authentication {
+  private String accessToken;
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    return true;
+  public String getAccessToken() {
+    return accessToken;
+  }
+
+  public void setAccessToken(String accessToken) {
+    this.accessToken = accessToken;
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash();
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IterableUser {\n");
-    
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+  public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams) {
+    if (accessToken != null) {
+      headerParams.put("Authorization", "Bearer " + accessToken);
     }
-    return o.toString().replace("\n", "\n    ");
   }
 }
-
