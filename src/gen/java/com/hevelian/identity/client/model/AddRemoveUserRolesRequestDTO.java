@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * AddRemoveUserRolesRequestDTO
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:32:23.695+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T15:43:05.649+02:00")
 public class AddRemoveUserRolesRequestDTO   {
   @SerializedName("name")
   private String name = null;

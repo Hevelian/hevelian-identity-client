@@ -1582,6 +1582,14 @@
 				}
 			}
 		},
+		"Policy": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		},
 		"EntitlementAttributesDTO": {
 			"type": "object",
 			"properties": {
