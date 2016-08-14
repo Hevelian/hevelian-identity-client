@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LoginDTO
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:13:25.923+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:32:23.695+02:00")
 public class LoginDTO   {
   @SerializedName("password")
   private String password = null;

@@ -32,50 +32,50 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * UserCredentialsRequestDTO
+ * Chronology
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:32:23.695+02:00")
-public class UserCredentialsRequestDTO   {
-  @SerializedName("name")
-  private String name = null;
+public class Chronology   {
+  @SerializedName("calendarType")
+  private String calendarType = null;
 
-  @SerializedName("password")
-  private String password = null;
+  @SerializedName("id")
+  private String id = null;
 
-  public UserCredentialsRequestDTO name(String name) {
-    this.name = name;
+  public Chronology calendarType(String calendarType) {
+    this.calendarType = calendarType;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get calendarType
+   * @return calendarType
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
-    return name;
+  public String getCalendarType() {
+    return calendarType;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setCalendarType(String calendarType) {
+    this.calendarType = calendarType;
   }
 
-  public UserCredentialsRequestDTO password(String password) {
-    this.password = password;
+  public Chronology id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get id
+   * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getPassword() {
-    return password;
+  public String getId() {
+    return id;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -87,23 +87,23 @@ public class UserCredentialsRequestDTO   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserCredentialsRequestDTO userCredentialsRequestDTO = (UserCredentialsRequestDTO) o;
-    return Objects.equals(this.name, userCredentialsRequestDTO.name) &&
-        Objects.equals(this.password, userCredentialsRequestDTO.password);
+    Chronology chronology = (Chronology) o;
+    return Objects.equals(this.calendarType, chronology.calendarType) &&
+        Objects.equals(this.id, chronology.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, password);
+    return Objects.hash(calendarType, id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserCredentialsRequestDTO {\n");
+    sb.append("class Chronology {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    calendarType: ").append(toIndentedString(calendarType)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

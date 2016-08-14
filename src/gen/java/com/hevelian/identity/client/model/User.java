@@ -34,13 +34,34 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * User
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:13:25.923+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:32:23.695+02:00")
 public class User   {
+  @SerializedName("deletable")
+  private Boolean deletable = null;
+
   @SerializedName("enabled")
   private Boolean enabled = null;
 
   @SerializedName("name")
   private String name = null;
+
+  public User deletable(Boolean deletable) {
+    this.deletable = deletable;
+    return this;
+  }
+
+   /**
+   * Get deletable
+   * @return deletable
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Boolean getDeletable() {
+    return deletable;
+  }
+
+  public void setDeletable(Boolean deletable) {
+    this.deletable = deletable;
+  }
 
   public User enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -88,13 +109,14 @@ public class User   {
       return false;
     }
     User user = (User) o;
-    return Objects.equals(this.enabled, user.enabled) &&
+    return Objects.equals(this.deletable, user.deletable) &&
+        Objects.equals(this.enabled, user.enabled) &&
         Objects.equals(this.name, user.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, name);
+    return Objects.hash(deletable, enabled, name);
   }
 
   @Override
@@ -102,6 +124,7 @@ public class User   {
     StringBuilder sb = new StringBuilder();
     sb.append("class User {\n");
     
+    sb.append("    deletable: ").append(toIndentedString(deletable)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

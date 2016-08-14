@@ -27,24 +27,36 @@ package com.hevelian.identity.client.model;
 
 import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
-import com.hevelian.identity.client.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.*;
 
 
 /**
  * Tenant
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:13:25.923+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:32:23.695+02:00")
 public class Tenant   {
   @SerializedName("active")
   private Boolean active = null;
 
+  @SerializedName("adminName")
+  private String adminName = null;
+
+  @SerializedName("contactEmail")
+  private String contactEmail = null;
+
+  @SerializedName("dateActiveChanged")
+  private LocalDateTime dateActiveChanged = null;
+
+  @SerializedName("dateCreated")
+  private LocalDateTime dateCreated = null;
+
+  @SerializedName("description")
+  private String description = null;
+
   @SerializedName("domain")
   private String domain = null;
-
-  @SerializedName("tenantAdmin")
-  private User tenantAdmin = null;
 
   public Tenant active(Boolean active) {
     this.active = active;
@@ -62,6 +74,96 @@ public class Tenant   {
 
   public void setActive(Boolean active) {
     this.active = active;
+  }
+
+  public Tenant adminName(String adminName) {
+    this.adminName = adminName;
+    return this;
+  }
+
+   /**
+   * Get adminName
+   * @return adminName
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getAdminName() {
+    return adminName;
+  }
+
+  public void setAdminName(String adminName) {
+    this.adminName = adminName;
+  }
+
+  public Tenant contactEmail(String contactEmail) {
+    this.contactEmail = contactEmail;
+    return this;
+  }
+
+   /**
+   * Get contactEmail
+   * @return contactEmail
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getContactEmail() {
+    return contactEmail;
+  }
+
+  public void setContactEmail(String contactEmail) {
+    this.contactEmail = contactEmail;
+  }
+
+  public Tenant dateActiveChanged(LocalDateTime dateActiveChanged) {
+    this.dateActiveChanged = dateActiveChanged;
+    return this;
+  }
+
+   /**
+   * Get dateActiveChanged
+   * @return dateActiveChanged
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public LocalDateTime getDateActiveChanged() {
+    return dateActiveChanged;
+  }
+
+  public void setDateActiveChanged(LocalDateTime dateActiveChanged) {
+    this.dateActiveChanged = dateActiveChanged;
+  }
+
+  public Tenant dateCreated(LocalDateTime dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+
+   /**
+   * Get dateCreated
+   * @return dateCreated
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public LocalDateTime getDateCreated() {
+    return dateCreated;
+  }
+
+  public void setDateCreated(LocalDateTime dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  public Tenant description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public Tenant domain(String domain) {
@@ -82,24 +184,6 @@ public class Tenant   {
     this.domain = domain;
   }
 
-  public Tenant tenantAdmin(User tenantAdmin) {
-    this.tenantAdmin = tenantAdmin;
-    return this;
-  }
-
-   /**
-   * Get tenantAdmin
-   * @return tenantAdmin
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public User getTenantAdmin() {
-    return tenantAdmin;
-  }
-
-  public void setTenantAdmin(User tenantAdmin) {
-    this.tenantAdmin = tenantAdmin;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,13 +195,17 @@ public class Tenant   {
     }
     Tenant tenant = (Tenant) o;
     return Objects.equals(this.active, tenant.active) &&
-        Objects.equals(this.domain, tenant.domain) &&
-        Objects.equals(this.tenantAdmin, tenant.tenantAdmin);
+        Objects.equals(this.adminName, tenant.adminName) &&
+        Objects.equals(this.contactEmail, tenant.contactEmail) &&
+        Objects.equals(this.dateActiveChanged, tenant.dateActiveChanged) &&
+        Objects.equals(this.dateCreated, tenant.dateCreated) &&
+        Objects.equals(this.description, tenant.description) &&
+        Objects.equals(this.domain, tenant.domain);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, domain, tenantAdmin);
+    return Objects.hash(active, adminName, contactEmail, dateActiveChanged, dateCreated, description, domain);
   }
 
   @Override
@@ -126,8 +214,12 @@ public class Tenant   {
     sb.append("class Tenant {\n");
     
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    adminName: ").append(toIndentedString(adminName)).append("\n");
+    sb.append("    contactEmail: ").append(toIndentedString(contactEmail)).append("\n");
+    sb.append("    dateActiveChanged: ").append(toIndentedString(dateActiveChanged)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
-    sb.append("    tenantAdmin: ").append(toIndentedString(tenantAdmin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

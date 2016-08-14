@@ -69,7 +69,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«booleanÂ»"
+							"$ref": "#/definitions/PrimitiveResult«boolean»"
 						}
 					},
 					"201": {
@@ -115,7 +115,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«stringÂ»"
+							"$ref": "#/definitions/PrimitiveResult«string»"
 						}
 					},
 					"201": {
@@ -161,7 +161,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«stringÂ»"
+							"$ref": "#/definitions/PrimitiveResult«string»"
 						}
 					},
 					"201": {
@@ -294,7 +294,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«booleanÂ»"
+							"$ref": "#/definitions/PrimitiveResult«boolean»"
 						}
 					},
 					"201": {
@@ -433,7 +433,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«stringÂ»"
+							"$ref": "#/definitions/PrimitiveResult«string»"
 						}
 					},
 					"401": {
@@ -554,7 +554,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«stringÂ»"
+							"$ref": "#/definitions/PrimitiveResult«string»"
 						}
 					},
 					"201": {
@@ -896,7 +896,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«stringÂ»"
+							"$ref": "#/definitions/PrimitiveResult«string»"
 						}
 					},
 					"201": {
@@ -942,7 +942,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/PrimitiveResultÂ«stringÂ»"
+							"$ref": "#/definitions/PrimitiveResult«string»"
 						}
 					},
 					"201": {
@@ -1117,7 +1117,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/IterableÂ«RoleÂ»"
+							"$ref": "#/definitions/Iterable«Role»"
 						}
 					},
 					"201": {
@@ -1163,7 +1163,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/IterableÂ«UserÂ»"
+							"$ref": "#/definitions/Iterable«User»"
 						}
 					},
 					"201": {
@@ -1198,7 +1198,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/IterableÂ«RoleÂ»"
+							"$ref": "#/definitions/Iterable«Role»"
 						}
 					},
 					"401": {
@@ -1230,7 +1230,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/IterableÂ«UserÂ»"
+							"$ref": "#/definitions/Iterable«User»"
 						}
 					},
 					"401": {
@@ -1347,23 +1347,11 @@
 				"parameters": [
 					{
 						"in": "body",
-						"name": "roleName",
-						"description": "roleName",
-						"required": false,
+						"name": "updateUsersOfRoleRequest",
+						"description": "updateUsersOfRoleRequest",
+						"required": true,
 						"schema": {
-							"type": "string"
-						}
-					},
-					{
-						"in": "body",
-						"name": "newUserNames",
-						"description": "newUserNames",
-						"required": false,
-						"schema": {
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
+							"$ref": "#/definitions/UpdateUsersOfRoleRequestDTO"
 						}
 					}
 				],
@@ -1388,7 +1376,76 @@
 		}
 	},
 	"definitions": {
-		"IterableÂ«UserÂ»": {
+		"LocalDateTime": {
+			"type": "object",
+			"properties": {
+				"chronology": {
+					"$ref": "#/definitions/Chronology"
+				},
+				"dayOfMonth": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"dayOfWeek": {
+					"type": "string",
+					"enum": [
+						"MONDAY",
+						"TUESDAY",
+						"WEDNESDAY",
+						"THURSDAY",
+						"FRIDAY",
+						"SATURDAY",
+						"SUNDAY"
+					]
+				},
+				"dayOfYear": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"hour": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"minute": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"month": {
+					"type": "string",
+					"enum": [
+						"JANUARY",
+						"FEBRUARY",
+						"MARCH",
+						"APRIL",
+						"MAY",
+						"JUNE",
+						"JULY",
+						"AUGUST",
+						"SEPTEMBER",
+						"OCTOBER",
+						"NOVEMBER",
+						"DECEMBER"
+					]
+				},
+				"monthValue": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"nano": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"second": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"year": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"Iterable«User»": {
 			"type": "object"
 		},
 		"EntitlementRequestDTO": {
@@ -1402,6 +1459,9 @@
 		"User": {
 			"type": "object",
 			"properties": {
+				"deletable": {
+					"type": "boolean"
+				},
 				"enabled": {
 					"type": "boolean"
 				},
@@ -1410,20 +1470,38 @@
 				}
 			}
 		},
-		"IterableÂ«RoleÂ»": {
+		"Iterable«Role»": {
 			"type": "object"
 		},
 		"TenantRequestDTO": {
 			"type": "object",
 			"properties": {
+				"_initialActive": {
+					"type": "boolean"
+				},
 				"active": {
 					"type": "boolean"
+				},
+				"adminName": {
+					"type": "string"
+				},
+				"contactEmail": {
+					"type": "string"
+				},
+				"dateActiveChanged": {
+					"$ref": "#/definitions/LocalDateTime"
+				},
+				"dateCreated": {
+					"$ref": "#/definitions/LocalDateTime"
+				},
+				"description": {
+					"type": "string"
 				},
 				"domain": {
 					"type": "string"
 				},
 				"tenantAdmin": {
-					"$ref": "#/definitions/UserRequestDTO"
+					"$ref": "#/definitions/TenantAdminRequestDTO"
 				}
 			}
 		},
@@ -1455,7 +1533,7 @@
 				}
 			}
 		},
-		"PrimitiveResultÂ«booleanÂ»": {
+		"PrimitiveResult«boolean»": {
 			"type": "object",
 			"properties": {
 				"result": {
@@ -1496,17 +1574,6 @@
 				}
 			}
 		},
-		"UserRequestDTO": {
-			"type": "object",
-			"properties": {
-				"name": {
-					"type": "string"
-				},
-				"password": {
-					"type": "string"
-				}
-			}
-		},
 		"Role": {
 			"type": "object",
 			"properties": {
@@ -1515,17 +1582,6 @@
 				}
 			}
 		},
-        "Policy": {
-            "type": "object",
-            "properties": {
-                "active": {
-                    "type": "boolean"
-                },
-                "domain": {
-                    "type": "string"
-                }
-            }
-        }, 
 		"EntitlementAttributesDTO": {
 			"type": "object",
 			"properties": {
@@ -1549,15 +1605,41 @@
 				"active": {
 					"type": "boolean"
 				},
-				"domain": {
+				"adminName": {
 					"type": "string"
 				},
-				"tenantAdmin": {
-					"$ref": "#/definitions/User"
+				"contactEmail": {
+					"type": "string"
+				},
+				"dateActiveChanged": {
+					"$ref": "#/definitions/LocalDateTime"
+				},
+				"dateCreated": {
+					"$ref": "#/definitions/LocalDateTime"
+				},
+				"description": {
+					"type": "string"
+				},
+				"domain": {
+					"type": "string"
 				}
 			}
 		},
-		"PrimitiveResultÂ«stringÂ»": {
+		"UpdateUsersOfRoleRequestDTO": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"newUserNames": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"PrimitiveResult«string»": {
 			"type": "object",
 			"properties": {
 				"result": {
@@ -1593,6 +1675,17 @@
 				}
 			}
 		},
+		"Chronology": {
+			"type": "object",
+			"properties": {
+				"calendarType": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				}
+			}
+		},
 		"UserCredentialsRequestDTO": {
 			"type": "object",
 			"properties": {
@@ -1614,6 +1707,17 @@
 					"type": "boolean"
 				},
 				"username": {
+					"type": "string"
+				}
+			}
+		},
+		"TenantAdminRequestDTO": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"password": {
 					"type": "string"
 				}
 			}

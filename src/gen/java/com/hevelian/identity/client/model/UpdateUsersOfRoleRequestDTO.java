@@ -34,20 +34,17 @@ import java.util.List;
 
 
 /**
- * AddRemoveUsersOfRoleRequestDTO
+ * UpdateUsersOfRoleRequestDTO
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T11:32:23.695+02:00")
-public class AddRemoveUsersOfRoleRequestDTO   {
+public class UpdateUsersOfRoleRequestDTO   {
   @SerializedName("name")
   private String name = null;
 
   @SerializedName("newUserNames")
   private List<String> newUserNames = new ArrayList<String>();
 
-  @SerializedName("removedUserNames")
-  private List<String> removedUserNames = new ArrayList<String>();
-
-  public AddRemoveUsersOfRoleRequestDTO name(String name) {
+  public UpdateUsersOfRoleRequestDTO name(String name) {
     this.name = name;
     return this;
   }
@@ -65,12 +62,12 @@ public class AddRemoveUsersOfRoleRequestDTO   {
     this.name = name;
   }
 
-  public AddRemoveUsersOfRoleRequestDTO newUserNames(List<String> newUserNames) {
+  public UpdateUsersOfRoleRequestDTO newUserNames(List<String> newUserNames) {
     this.newUserNames = newUserNames;
     return this;
   }
 
-  public AddRemoveUsersOfRoleRequestDTO addNewUserNamesItem(String newUserNamesItem) {
+  public UpdateUsersOfRoleRequestDTO addNewUserNamesItem(String newUserNamesItem) {
     this.newUserNames.add(newUserNamesItem);
     return this;
   }
@@ -88,29 +85,6 @@ public class AddRemoveUsersOfRoleRequestDTO   {
     this.newUserNames = newUserNames;
   }
 
-  public AddRemoveUsersOfRoleRequestDTO removedUserNames(List<String> removedUserNames) {
-    this.removedUserNames = removedUserNames;
-    return this;
-  }
-
-  public AddRemoveUsersOfRoleRequestDTO addRemovedUserNamesItem(String removedUserNamesItem) {
-    this.removedUserNames.add(removedUserNamesItem);
-    return this;
-  }
-
-   /**
-   * Get removedUserNames
-   * @return removedUserNames
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getRemovedUserNames() {
-    return removedUserNames;
-  }
-
-  public void setRemovedUserNames(List<String> removedUserNames) {
-    this.removedUserNames = removedUserNames;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,25 +94,23 @@ public class AddRemoveUsersOfRoleRequestDTO   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AddRemoveUsersOfRoleRequestDTO addRemoveUsersOfRoleRequestDTO = (AddRemoveUsersOfRoleRequestDTO) o;
-    return Objects.equals(this.name, addRemoveUsersOfRoleRequestDTO.name) &&
-        Objects.equals(this.newUserNames, addRemoveUsersOfRoleRequestDTO.newUserNames) &&
-        Objects.equals(this.removedUserNames, addRemoveUsersOfRoleRequestDTO.removedUserNames);
+    UpdateUsersOfRoleRequestDTO updateUsersOfRoleRequestDTO = (UpdateUsersOfRoleRequestDTO) o;
+    return Objects.equals(this.name, updateUsersOfRoleRequestDTO.name) &&
+        Objects.equals(this.newUserNames, updateUsersOfRoleRequestDTO.newUserNames);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, newUserNames, removedUserNames);
+    return Objects.hash(name, newUserNames);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AddRemoveUsersOfRoleRequestDTO {\n");
+    sb.append("class UpdateUsersOfRoleRequestDTO {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    newUserNames: ").append(toIndentedString(newUserNames)).append("\n");
-    sb.append("    removedUserNames: ").append(toIndentedString(removedUserNames)).append("\n");
     sb.append("}");
     return sb.toString();
   }

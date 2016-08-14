@@ -49,6 +49,7 @@ import com.hevelian.identity.client.model.IterableRole;
 import com.hevelian.identity.client.model.IterableUser;
 import com.hevelian.identity.client.model.UpdateRoleNameRequestDTO;
 import com.hevelian.identity.client.model.UpdateUserRolesRequestDTO;
+import com.hevelian.identity.client.model.UpdateUsersOfRoleRequestDTO;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1410,8 +1411,13 @@ public class UsercontrollerApi {
         return call;
     }
     /* Build call for updateUsersOfRoleUsingPOST */
-    private com.squareup.okhttp.Call updateUsersOfRoleUsingPOSTCall(String roleName, List<String> newUserNames, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = newUserNames;
+    private com.squareup.okhttp.Call updateUsersOfRoleUsingPOSTCall(UpdateUsersOfRoleRequestDTO updateUsersOfRoleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = updateUsersOfRoleRequest;
+        
+        // verify the required parameter 'updateUsersOfRoleRequest' is set
+        if (updateUsersOfRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateUsersOfRoleRequest' when calling updateUsersOfRoleUsingPOST(Async)");
+        }
         
 
         // create path and map variables
@@ -1454,37 +1460,34 @@ public class UsercontrollerApi {
     /**
      * updateUsersOfRole
      * 
-     * @param roleName roleName (optional)
-     * @param newUserNames newUserNames (optional)
+     * @param updateUsersOfRoleRequest updateUsersOfRoleRequest (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateUsersOfRoleUsingPOST(String roleName, List<String> newUserNames) throws ApiException {
-        updateUsersOfRoleUsingPOSTWithHttpInfo(roleName, newUserNames);
+    public void updateUsersOfRoleUsingPOST(UpdateUsersOfRoleRequestDTO updateUsersOfRoleRequest) throws ApiException {
+        updateUsersOfRoleUsingPOSTWithHttpInfo(updateUsersOfRoleRequest);
     }
 
     /**
      * updateUsersOfRole
      * 
-     * @param roleName roleName (optional)
-     * @param newUserNames newUserNames (optional)
+     * @param updateUsersOfRoleRequest updateUsersOfRoleRequest (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateUsersOfRoleUsingPOSTWithHttpInfo(String roleName, List<String> newUserNames) throws ApiException {
-        com.squareup.okhttp.Call call = updateUsersOfRoleUsingPOSTCall(roleName, newUserNames, null, null);
+    public ApiResponse<Void> updateUsersOfRoleUsingPOSTWithHttpInfo(UpdateUsersOfRoleRequestDTO updateUsersOfRoleRequest) throws ApiException {
+        com.squareup.okhttp.Call call = updateUsersOfRoleUsingPOSTCall(updateUsersOfRoleRequest, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * updateUsersOfRole (asynchronously)
      * 
-     * @param roleName roleName (optional)
-     * @param newUserNames newUserNames (optional)
+     * @param updateUsersOfRoleRequest updateUsersOfRoleRequest (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateUsersOfRoleUsingPOSTAsync(String roleName, List<String> newUserNames, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateUsersOfRoleUsingPOSTAsync(UpdateUsersOfRoleRequestDTO updateUsersOfRoleRequest, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1505,7 +1508,7 @@ public class UsercontrollerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateUsersOfRoleUsingPOSTCall(roleName, newUserNames, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateUsersOfRoleUsingPOSTCall(updateUsersOfRoleRequest, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
