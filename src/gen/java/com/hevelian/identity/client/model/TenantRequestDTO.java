@@ -36,16 +36,13 @@ import org.joda.time.*;
 /**
  * TenantRequestDTO
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T15:43:05.649+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-12T08:42:51.167+01:00")
 public class TenantRequestDTO   {
   @SerializedName("_initialActive")
   private Boolean initialActive = null;
 
   @SerializedName("active")
   private Boolean active = null;
-
-  @SerializedName("adminName")
-  private String adminName = null;
 
   @SerializedName("contactEmail")
   private String contactEmail = null;
@@ -99,24 +96,6 @@ public class TenantRequestDTO   {
 
   public void setActive(Boolean active) {
     this.active = active;
-  }
-
-  public TenantRequestDTO adminName(String adminName) {
-    this.adminName = adminName;
-    return this;
-  }
-
-   /**
-   * Get adminName
-   * @return adminName
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getAdminName() {
-    return adminName;
-  }
-
-  public void setAdminName(String adminName) {
-    this.adminName = adminName;
   }
 
   public TenantRequestDTO contactEmail(String contactEmail) {
@@ -239,7 +218,6 @@ public class TenantRequestDTO   {
     TenantRequestDTO tenantRequestDTO = (TenantRequestDTO) o;
     return Objects.equals(this.initialActive, tenantRequestDTO.initialActive) &&
         Objects.equals(this.active, tenantRequestDTO.active) &&
-        Objects.equals(this.adminName, tenantRequestDTO.adminName) &&
         Objects.equals(this.contactEmail, tenantRequestDTO.contactEmail) &&
         Objects.equals(this.dateActiveChanged, tenantRequestDTO.dateActiveChanged) &&
         Objects.equals(this.dateCreated, tenantRequestDTO.dateCreated) &&
@@ -250,7 +228,7 @@ public class TenantRequestDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(initialActive, active, adminName, contactEmail, dateActiveChanged, dateCreated, description, domain, tenantAdmin);
+    return Objects.hash(initialActive, active, contactEmail, dateActiveChanged, dateCreated, description, domain, tenantAdmin);
   }
 
   @Override
@@ -260,7 +238,6 @@ public class TenantRequestDTO   {
     
     sb.append("    initialActive: ").append(toIndentedString(initialActive)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    adminName: ").append(toIndentedString(adminName)).append("\n");
     sb.append("    contactEmail: ").append(toIndentedString(contactEmail)).append("\n");
     sb.append("    dateActiveChanged: ").append(toIndentedString(dateActiveChanged)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

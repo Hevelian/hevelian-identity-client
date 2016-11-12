@@ -1482,9 +1482,6 @@
 				"active": {
 					"type": "boolean"
 				},
-				"adminName": {
-					"type": "string"
-				},
 				"contactEmail": {
 					"type": "string"
 				},

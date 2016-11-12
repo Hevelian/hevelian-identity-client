@@ -31,7 +31,7 @@ import java.util.Objects;
 /**
  * IterableUser
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-14T15:43:05.649+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-12T08:42:51.167+01:00")
 public class IterableUser   {
 
   @Override
