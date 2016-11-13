@@ -36,7 +36,7 @@ import org.joda.time.*;
 /**
  * TenantRequestDTO
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-13T17:16:00.899+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-13T17:51:29.818+01:00")
 public class TenantRequestDTO   {
   @SerializedName("_initialActive")
   private Boolean initialActive = null;

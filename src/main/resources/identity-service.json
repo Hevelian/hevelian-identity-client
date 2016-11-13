@@ -1811,6 +1811,14 @@
 				}
 			}
 		},
+		"Policy": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		},
 		"AddRemoveUserRolesRequestDTO": {
 			"type": "object",
 			"properties": {
