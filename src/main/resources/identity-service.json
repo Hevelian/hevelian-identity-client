@@ -40,6 +40,14 @@
 			"description": "User Controller"
 		}
 	],
+	"consumes": [
+		"application/xml",
+		"application/json"
+	],
+	"produces": [
+		"application/xml",
+		"application/json"
+	],
 	"paths": {
 		"/api/EntitlementService/getBooleanDecision": {
 			"post": {
@@ -49,10 +57,12 @@
 				"summary": "getBooleanDecision",
 				"operationId": "getBooleanDecisionUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -84,7 +94,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/EntitlementService/getDecision": {
@@ -95,10 +112,12 @@
 				"summary": "getDecision",
 				"operationId": "getDecisionUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -130,7 +149,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/EntitlementService/getDecisionByAttributes": {
@@ -141,10 +167,12 @@
 				"summary": "getDecisionByAttributes",
 				"operationId": "getDecisionByAttributesUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -176,7 +204,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/LoggedUserService/changePassword": {
@@ -187,10 +222,12 @@
 				"summary": "changePassword",
 				"operationId": "changePasswordUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -228,7 +265,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/LoggedUserService/getRoles": {
@@ -239,10 +283,12 @@
 				"summary": "getRoles",
 				"operationId": "getRolesUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -263,7 +309,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/LoginService/login": {
@@ -274,10 +327,12 @@
 				"summary": "login",
 				"operationId": "loginUsingPOST_1",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -309,7 +364,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/LoginService/loginWithRememberMeCookie": {
@@ -320,10 +382,12 @@
 				"summary": "login",
 				"operationId": "loginUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -352,7 +416,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/LoginService/logout": {
@@ -363,10 +434,12 @@
 				"summary": "logout",
 				"operationId": "logoutUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"201": {
@@ -384,7 +457,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/PolicyService/testAddPolicy": {
@@ -395,10 +475,12 @@
 				"summary": "testAddPolicy",
 				"operationId": "testAddPolicyUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -413,7 +495,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/PolicyService/testCount": {
@@ -424,10 +513,12 @@
 				"summary": "testCount",
 				"operationId": "testCountUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -445,7 +536,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/PolicyService/testGetAll": {
@@ -456,10 +554,12 @@
 				"summary": "testGetAll",
 				"operationId": "testGetAllUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -480,7 +580,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/activateTenant": {
@@ -491,10 +598,12 @@
 				"summary": "activateTenant",
 				"operationId": "activateTenantUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -523,7 +632,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/addTenant": {
@@ -534,10 +650,12 @@
 				"summary": "addTenant",
 				"operationId": "addTenantUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -569,7 +687,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/deactivateTenant": {
@@ -580,10 +705,12 @@
 				"summary": "deactivateTenant",
 				"operationId": "deactivateTenantUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -612,7 +739,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/deleteTenant": {
@@ -623,10 +757,12 @@
 				"summary": "deleteTenant",
 				"operationId": "deleteTenantUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -655,7 +791,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/getAllTenants": {
@@ -666,10 +809,12 @@
 				"summary": "getAllTenants",
 				"operationId": "getAllTenantsUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -690,7 +835,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/getTenant": {
@@ -701,10 +853,12 @@
 				"summary": "getTenant",
 				"operationId": "getTenantUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -736,7 +890,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/TenantService/updateTenant": {
@@ -747,10 +908,12 @@
 				"summary": "updateTenant",
 				"operationId": "updateTenantUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -779,7 +942,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/addRemoveRolesOfUser": {
@@ -790,10 +960,12 @@
 				"summary": "addRemoveRolesOfUser",
 				"operationId": "addRemoveRolesOfUserUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -822,7 +994,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/addRemoveUsersOfRole": {
@@ -833,10 +1012,12 @@
 				"summary": "addRemoveUsersOfRole",
 				"operationId": "addRemoveUsersOfRoleUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -865,7 +1046,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/addRole": {
@@ -876,10 +1064,12 @@
 				"summary": "addRole",
 				"operationId": "addRoleUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -911,7 +1101,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/addUser": {
@@ -922,10 +1119,12 @@
 				"summary": "addUser",
 				"operationId": "addUserUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -957,7 +1156,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/changePassword": {
@@ -968,10 +1174,12 @@
 				"summary": "changePassword",
 				"operationId": "changePasswordUsingPOST_1",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1000,7 +1208,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/deleteRole": {
@@ -1011,10 +1226,12 @@
 				"summary": "deleteRole",
 				"operationId": "deleteRoleUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1043,7 +1260,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/deleteUser": {
@@ -1054,10 +1278,12 @@
 				"summary": "deleteUser",
 				"operationId": "deleteUserUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1086,7 +1312,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/getRolesOfUser": {
@@ -1097,10 +1330,12 @@
 				"summary": "getRolesOfUser",
 				"operationId": "getRolesOfUserUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1132,7 +1367,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/getUsersOfRole": {
@@ -1143,10 +1385,12 @@
 				"summary": "getUsersOfRole",
 				"operationId": "getUsersOfRoleUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1178,7 +1422,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/listRoles": {
@@ -1189,10 +1440,12 @@
 				"summary": "listRoles",
 				"operationId": "listRolesUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -1210,7 +1463,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/listUsers": {
@@ -1221,10 +1481,12 @@
 				"summary": "listUsers",
 				"operationId": "listUsersUsingGET",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"responses": {
 					"200": {
@@ -1242,7 +1504,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/updateRoleName": {
@@ -1253,10 +1522,12 @@
 				"summary": "updateRoleName",
 				"operationId": "updateRoleNameUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1285,7 +1556,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/updateRolesOfUser": {
@@ -1296,10 +1574,12 @@
 				"summary": "updateRolesOfUser",
 				"operationId": "updateRolesOfUserUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1328,7 +1608,14 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
 		},
 		"/api/UserService/updateUsersOfRole": {
@@ -1339,10 +1626,12 @@
 				"summary": "updateUsersOfRole",
 				"operationId": "updateUsersOfRoleUsingPOST",
 				"consumes": [
+					"application/xml",
 					"application/json"
 				],
 				"produces": [
-					"*/*"
+					"application/xml",
+					"application/json"
 				],
 				"parameters": [
 					{
@@ -1371,8 +1660,20 @@
 					"404": {
 						"description": "Not Found"
 					}
-				}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
 			}
+		}
+	},
+	"securityDefinitions": {
+		"default": {
+			"type": "basic"
 		}
 	},
 	"definitions": {
@@ -1572,14 +1873,6 @@
 			}
 		},
 		"Role": {
-			"type": "object",
-			"properties": {
-				"name": {
-					"type": "string"
-				}
-			}
-		},
-		"Policy": {
 			"type": "object",
 			"properties": {
 				"name": {

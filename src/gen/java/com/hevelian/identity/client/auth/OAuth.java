@@ -30,7 +30,7 @@ import com.hevelian.identity.client.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-12T08:42:51.167+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-13T17:16:00.899+01:00")
 public class OAuth implements Authentication {
   private String accessToken;
 
