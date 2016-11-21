@@ -68,13 +68,15 @@ public class LogincontrollerApi {
 
     /* Build call for loginUsingPOST */
     private com.squareup.okhttp.Call loginUsingPOSTCall(String cookie, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = cookie;
+        Object localVarPostBody = null;
         
 
         // create path and map variables
-        String localVarPath = "/api/LoginService/loginWithRememberMeCookie".replaceAll("\\{format\\}","json");
+        String localVarPath = "/LoginService/loginWithRememberMeCookie".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (cookie != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "cookie", cookie));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -174,7 +176,7 @@ public class LogincontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/LoginService/login".replaceAll("\\{format\\}","json");
+        String localVarPath = "/LoginService/login".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -275,7 +277,7 @@ public class LogincontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/LoginService/logout".replaceAll("\\{format\\}","json");
+        String localVarPath = "/LoginService/logout".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

@@ -79,7 +79,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/activateTenant".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/activateTenant".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -181,7 +181,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/addTenant".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/addTenant".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -287,7 +287,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/deactivateTenant".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/deactivateTenant".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -389,7 +389,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/deleteTenant".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/deleteTenant".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -486,7 +486,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/getAllTenants".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/getAllTenants".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -589,7 +589,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/getTenant".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/getTenant".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -695,7 +695,7 @@ public class TenantcontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/TenantService/updateTenant".replaceAll("\\{format\\}","json");
+        String localVarPath = "/TenantService/updateTenant".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

@@ -13,7 +13,7 @@
 		}
 	},
 	"host": "localhost:8082",
-	"basePath": "/identity-server",
+	"basePath": "/identity-server/api",
 	"tags": [
 		{
 			"name": "entitlement-controller",
@@ -24,16 +24,16 @@
 			"description": "Logged User Controller"
 		},
 		{
+			"name": "pap-controller",
+			"description": "PAP Controller"
+		},
+		{
 			"name": "tenant-controller",
 			"description": "Tenant Controller"
 		},
 		{
 			"name": "login-controller",
 			"description": "Login Controller"
-		},
-		{
-			"name": "policy-controller",
-			"description": "Policy Controller"
 		},
 		{
 			"name": "user-controller",
@@ -49,7 +49,7 @@
 		"application/json"
 	],
 	"paths": {
-		"/api/EntitlementService/getBooleanDecision": {
+		"/EntitlementService/getBooleanDecision": {
 			"post": {
 				"tags": [
 					"entitlement-controller"
@@ -104,7 +104,7 @@
 				]
 			}
 		},
-		"/api/EntitlementService/getDecision": {
+		"/EntitlementService/getDecision": {
 			"post": {
 				"tags": [
 					"entitlement-controller"
@@ -159,7 +159,7 @@
 				]
 			}
 		},
-		"/api/EntitlementService/getDecisionByAttributes": {
+		"/EntitlementService/getDecisionByAttributes": {
 			"post": {
 				"tags": [
 					"entitlement-controller"
@@ -214,7 +214,7 @@
 				]
 			}
 		},
-		"/api/LoggedUserService/changePassword": {
+		"/LoggedUserService/changePassword": {
 			"post": {
 				"tags": [
 					"logged-user-controller"
@@ -231,22 +231,18 @@
 				],
 				"parameters": [
 					{
-						"in": "body",
 						"name": "oldPassword",
+						"in": "query",
 						"description": "oldPassword",
 						"required": false,
-						"schema": {
-							"type": "string"
-						}
+						"type": "string"
 					},
 					{
-						"in": "body",
 						"name": "password",
+						"in": "query",
 						"description": "password",
 						"required": false,
-						"schema": {
-							"type": "string"
-						}
+						"type": "string"
 					}
 				],
 				"responses": {
@@ -275,7 +271,7 @@
 				]
 			}
 		},
-		"/api/LoggedUserService/getRoles": {
+		"/LoggedUserService/getRoles": {
 			"get": {
 				"tags": [
 					"logged-user-controller"
@@ -319,7 +315,7 @@
 				]
 			}
 		},
-		"/api/LoginService/login": {
+		"/LoginService/login": {
 			"post": {
 				"tags": [
 					"login-controller"
@@ -374,7 +370,7 @@
 				]
 			}
 		},
-		"/api/LoginService/loginWithRememberMeCookie": {
+		"/LoginService/loginWithRememberMeCookie": {
 			"post": {
 				"tags": [
 					"login-controller"
@@ -391,13 +387,11 @@
 				],
 				"parameters": [
 					{
-						"in": "body",
 						"name": "cookie",
+						"in": "query",
 						"description": "cookie",
 						"required": false,
-						"schema": {
-							"type": "string"
-						}
+						"type": "string"
 					}
 				],
 				"responses": {
@@ -426,7 +420,7 @@
 				]
 			}
 		},
-		"/api/LoginService/logout": {
+		"/LoginService/logout": {
 			"post": {
 				"tags": [
 					"login-controller"
@@ -467,13 +461,13 @@
 				]
 			}
 		},
-		"/api/PolicyService/testAddPolicy": {
-			"get": {
+		"/PAPService/testAddPolicy": {
+			"post": {
 				"tags": [
-					"policy-controller"
+					"pap-controller"
 				],
 				"summary": "testAddPolicy",
-				"operationId": "testAddPolicyUsingGET",
+				"operationId": "testAddPolicyUsingPOST",
 				"consumes": [
 					"application/xml",
 					"application/json"
@@ -486,46 +480,8 @@
 					"200": {
 						"description": "OK"
 					},
-					"401": {
-						"description": "Unauthorized"
-					},
-					"403": {
-						"description": "Forbidden"
-					},
-					"404": {
-						"description": "Not Found"
-					}
-				},
-				"security": [
-					{
-						"default": [
-							"require_auth"
-						]
-					}
-				]
-			}
-		},
-		"/api/PolicyService/testCount": {
-			"get": {
-				"tags": [
-					"policy-controller"
-				],
-				"summary": "testCount",
-				"operationId": "testCountUsingGET",
-				"consumes": [
-					"application/xml",
-					"application/json"
-				],
-				"produces": [
-					"application/xml",
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"$ref": "#/definitions/PrimitiveResult«string»"
-						}
+					"201": {
+						"description": "Created"
 					},
 					"401": {
 						"description": "Unauthorized"
@@ -546,10 +502,10 @@
 				]
 			}
 		},
-		"/api/PolicyService/testGetAll": {
+		"/PAPService/testGetAll": {
 			"get": {
 				"tags": [
-					"policy-controller"
+					"pap-controller"
 				],
 				"summary": "testGetAll",
 				"operationId": "testGetAllUsingGET",
@@ -567,7 +523,7 @@
 						"schema": {
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/Policy"
+								"$ref": "#/definitions/PAPPolicy"
 							}
 						}
 					},
@@ -590,7 +546,48 @@
 				]
 			}
 		},
-		"/api/TenantService/activateTenant": {
+		"/PAPService/testUpdatePolicy": {
+			"post": {
+				"tags": [
+					"pap-controller"
+				],
+				"summary": "testUpdatePolicy",
+				"operationId": "testUpdatePolicyUsingPOST",
+				"consumes": [
+					"application/xml",
+					"application/json"
+				],
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"security": [
+					{
+						"default": [
+							"require_auth"
+						]
+					}
+				]
+			}
+		},
+		"/TenantService/activateTenant": {
 			"post": {
 				"tags": [
 					"tenant-controller"
@@ -642,7 +639,7 @@
 				]
 			}
 		},
-		"/api/TenantService/addTenant": {
+		"/TenantService/addTenant": {
 			"post": {
 				"tags": [
 					"tenant-controller"
@@ -697,7 +694,7 @@
 				]
 			}
 		},
-		"/api/TenantService/deactivateTenant": {
+		"/TenantService/deactivateTenant": {
 			"post": {
 				"tags": [
 					"tenant-controller"
@@ -749,7 +746,7 @@
 				]
 			}
 		},
-		"/api/TenantService/deleteTenant": {
+		"/TenantService/deleteTenant": {
 			"post": {
 				"tags": [
 					"tenant-controller"
@@ -801,7 +798,7 @@
 				]
 			}
 		},
-		"/api/TenantService/getAllTenants": {
+		"/TenantService/getAllTenants": {
 			"get": {
 				"tags": [
 					"tenant-controller"
@@ -845,7 +842,7 @@
 				]
 			}
 		},
-		"/api/TenantService/getTenant": {
+		"/TenantService/getTenant": {
 			"post": {
 				"tags": [
 					"tenant-controller"
@@ -900,7 +897,7 @@
 				]
 			}
 		},
-		"/api/TenantService/updateTenant": {
+		"/TenantService/updateTenant": {
 			"post": {
 				"tags": [
 					"tenant-controller"
@@ -952,7 +949,7 @@
 				]
 			}
 		},
-		"/api/UserService/addRemoveRolesOfUser": {
+		"/UserService/addRemoveRolesOfUser": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1004,7 +1001,7 @@
 				]
 			}
 		},
-		"/api/UserService/addRemoveUsersOfRole": {
+		"/UserService/addRemoveUsersOfRole": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1056,7 +1053,7 @@
 				]
 			}
 		},
-		"/api/UserService/addRole": {
+		"/UserService/addRole": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1111,7 +1108,7 @@
 				]
 			}
 		},
-		"/api/UserService/addUser": {
+		"/UserService/addUser": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1166,7 +1163,7 @@
 				]
 			}
 		},
-		"/api/UserService/changePassword": {
+		"/UserService/changePassword": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1218,7 +1215,7 @@
 				]
 			}
 		},
-		"/api/UserService/deleteRole": {
+		"/UserService/deleteRole": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1270,7 +1267,7 @@
 				]
 			}
 		},
-		"/api/UserService/deleteUser": {
+		"/UserService/deleteUser": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1322,7 +1319,7 @@
 				]
 			}
 		},
-		"/api/UserService/getRolesOfUser": {
+		"/UserService/getRolesOfUser": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1377,7 +1374,7 @@
 				]
 			}
 		},
-		"/api/UserService/getUsersOfRole": {
+		"/UserService/getUsersOfRole": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1432,7 +1429,7 @@
 				]
 			}
 		},
-		"/api/UserService/listRoles": {
+		"/UserService/listRoles": {
 			"get": {
 				"tags": [
 					"user-controller"
@@ -1473,7 +1470,7 @@
 				]
 			}
 		},
-		"/api/UserService/listUsers": {
+		"/UserService/listUsers": {
 			"get": {
 				"tags": [
 					"user-controller"
@@ -1514,7 +1511,7 @@
 				]
 			}
 		},
-		"/api/UserService/updateRoleName": {
+		"/UserService/updateRoleName": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1566,7 +1563,7 @@
 				]
 			}
 		},
-		"/api/UserService/updateRolesOfUser": {
+		"/UserService/updateRolesOfUser": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1618,7 +1615,7 @@
 				]
 			}
 		},
-		"/api/UserService/updateUsersOfRole": {
+		"/UserService/updateUsersOfRole": {
 			"post": {
 				"tags": [
 					"user-controller"
@@ -1677,75 +1674,6 @@
 		}
 	},
 	"definitions": {
-		"LocalDateTime": {
-			"type": "object",
-			"properties": {
-				"chronology": {
-					"$ref": "#/definitions/Chronology"
-				},
-				"dayOfMonth": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"dayOfWeek": {
-					"type": "string",
-					"enum": [
-						"MONDAY",
-						"TUESDAY",
-						"WEDNESDAY",
-						"THURSDAY",
-						"FRIDAY",
-						"SATURDAY",
-						"SUNDAY"
-					]
-				},
-				"dayOfYear": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"hour": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"minute": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"month": {
-					"type": "string",
-					"enum": [
-						"JANUARY",
-						"FEBRUARY",
-						"MARCH",
-						"APRIL",
-						"MAY",
-						"JUNE",
-						"JULY",
-						"AUGUST",
-						"SEPTEMBER",
-						"OCTOBER",
-						"NOVEMBER",
-						"DECEMBER"
-					]
-				},
-				"monthValue": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"nano": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"second": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"year": {
-					"type": "integer",
-					"format": "int32"
-				}
-			}
-		},
 		"Iterable«User»": {
 			"type": "object"
 		},
@@ -1771,15 +1699,37 @@
 				}
 			}
 		},
+		"PAPPolicy": {
+			"type": "object",
+			"properties": {
+				"content": {
+					"type": "string"
+				},
+				"lastModifiedBy": {
+					"type": "string"
+				},
+				"policyId": {
+					"type": "string"
+				},
+				"policyType": {
+					"type": "string",
+					"enum": [
+						"POLICY",
+						"POLICY_SET"
+					]
+				},
+				"version": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
 		"Iterable«Role»": {
 			"type": "object"
 		},
 		"TenantRequestDTO": {
 			"type": "object",
 			"properties": {
-				"_initialActive": {
-					"type": "boolean"
-				},
 				"active": {
 					"type": "boolean"
 				},
@@ -1787,10 +1737,12 @@
 					"type": "string"
 				},
 				"dateActiveChanged": {
-					"$ref": "#/definitions/LocalDateTime"
+					"type": "string",
+					"format": "date-time"
 				},
 				"dateCreated": {
-					"$ref": "#/definitions/LocalDateTime"
+					"type": "string",
+					"format": "date-time"
 				},
 				"description": {
 					"type": "string"
@@ -1804,14 +1756,6 @@
 			}
 		},
 		"RoleRequestDTO": {
-			"type": "object",
-			"properties": {
-				"name": {
-					"type": "string"
-				}
-			}
-		},
-		"Policy": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -1888,6 +1832,14 @@
 				}
 			}
 		},
+		"Policy": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		},
 		"EntitlementAttributesDTO": {
 			"type": "object",
 			"properties": {
@@ -1918,10 +1870,12 @@
 					"type": "string"
 				},
 				"dateActiveChanged": {
-					"$ref": "#/definitions/LocalDateTime"
+					"type": "string",
+					"format": "date-time"
 				},
 				"dateCreated": {
-					"$ref": "#/definitions/LocalDateTime"
+					"type": "string",
+					"format": "date-time"
 				},
 				"description": {
 					"type": "string"
@@ -1978,17 +1932,6 @@
 					"items": {
 						"type": "string"
 					}
-				}
-			}
-		},
-		"Chronology": {
-			"type": "object",
-			"properties": {
-				"calendarType": {
-					"type": "string"
-				},
-				"id": {
-					"type": "string"
 				}
 			}
 		},

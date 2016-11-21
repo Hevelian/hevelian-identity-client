@@ -29,13 +29,13 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.*;
+import org.joda.time.DateTime;
 
 
 /**
  * Tenant
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-13T17:51:29.818+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-21T06:58:56.984+01:00")
 public class Tenant   {
   @SerializedName("active")
   private Boolean active = null;
@@ -47,10 +47,10 @@ public class Tenant   {
   private String contactEmail = null;
 
   @SerializedName("dateActiveChanged")
-  private LocalDateTime dateActiveChanged = null;
+  private DateTime dateActiveChanged = null;
 
   @SerializedName("dateCreated")
-  private LocalDateTime dateCreated = null;
+  private DateTime dateCreated = null;
 
   @SerializedName("description")
   private String description = null;
@@ -112,7 +112,7 @@ public class Tenant   {
     this.contactEmail = contactEmail;
   }
 
-  public Tenant dateActiveChanged(LocalDateTime dateActiveChanged) {
+  public Tenant dateActiveChanged(DateTime dateActiveChanged) {
     this.dateActiveChanged = dateActiveChanged;
     return this;
   }
@@ -122,15 +122,15 @@ public class Tenant   {
    * @return dateActiveChanged
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LocalDateTime getDateActiveChanged() {
+  public DateTime getDateActiveChanged() {
     return dateActiveChanged;
   }
 
-  public void setDateActiveChanged(LocalDateTime dateActiveChanged) {
+  public void setDateActiveChanged(DateTime dateActiveChanged) {
     this.dateActiveChanged = dateActiveChanged;
   }
 
-  public Tenant dateCreated(LocalDateTime dateCreated) {
+  public Tenant dateCreated(DateTime dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -140,11 +140,11 @@ public class Tenant   {
    * @return dateCreated
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LocalDateTime getDateCreated() {
+  public DateTime getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(LocalDateTime dateCreated) {
+  public void setDateCreated(DateTime dateCreated) {
     this.dateCreated = dateCreated;
   }
 

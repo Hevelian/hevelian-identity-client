@@ -30,17 +30,14 @@ import com.google.gson.annotations.SerializedName;
 import com.hevelian.identity.client.model.TenantAdminRequestDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.*;
+import org.joda.time.DateTime;
 
 
 /**
  * TenantRequestDTO
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-13T17:51:29.818+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-21T06:58:56.984+01:00")
 public class TenantRequestDTO   {
-  @SerializedName("_initialActive")
-  private Boolean initialActive = null;
-
   @SerializedName("active")
   private Boolean active = null;
 
@@ -48,10 +45,10 @@ public class TenantRequestDTO   {
   private String contactEmail = null;
 
   @SerializedName("dateActiveChanged")
-  private LocalDateTime dateActiveChanged = null;
+  private DateTime dateActiveChanged = null;
 
   @SerializedName("dateCreated")
-  private LocalDateTime dateCreated = null;
+  private DateTime dateCreated = null;
 
   @SerializedName("description")
   private String description = null;
@@ -61,24 +58,6 @@ public class TenantRequestDTO   {
 
   @SerializedName("tenantAdmin")
   private TenantAdminRequestDTO tenantAdmin = null;
-
-  public TenantRequestDTO initialActive(Boolean initialActive) {
-    this.initialActive = initialActive;
-    return this;
-  }
-
-   /**
-   * Get initialActive
-   * @return initialActive
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Boolean getInitialActive() {
-    return initialActive;
-  }
-
-  public void setInitialActive(Boolean initialActive) {
-    this.initialActive = initialActive;
-  }
 
   public TenantRequestDTO active(Boolean active) {
     this.active = active;
@@ -116,7 +95,7 @@ public class TenantRequestDTO   {
     this.contactEmail = contactEmail;
   }
 
-  public TenantRequestDTO dateActiveChanged(LocalDateTime dateActiveChanged) {
+  public TenantRequestDTO dateActiveChanged(DateTime dateActiveChanged) {
     this.dateActiveChanged = dateActiveChanged;
     return this;
   }
@@ -126,15 +105,15 @@ public class TenantRequestDTO   {
    * @return dateActiveChanged
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LocalDateTime getDateActiveChanged() {
+  public DateTime getDateActiveChanged() {
     return dateActiveChanged;
   }
 
-  public void setDateActiveChanged(LocalDateTime dateActiveChanged) {
+  public void setDateActiveChanged(DateTime dateActiveChanged) {
     this.dateActiveChanged = dateActiveChanged;
   }
 
-  public TenantRequestDTO dateCreated(LocalDateTime dateCreated) {
+  public TenantRequestDTO dateCreated(DateTime dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -144,11 +123,11 @@ public class TenantRequestDTO   {
    * @return dateCreated
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LocalDateTime getDateCreated() {
+  public DateTime getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(LocalDateTime dateCreated) {
+  public void setDateCreated(DateTime dateCreated) {
     this.dateCreated = dateCreated;
   }
 
@@ -216,8 +195,7 @@ public class TenantRequestDTO   {
       return false;
     }
     TenantRequestDTO tenantRequestDTO = (TenantRequestDTO) o;
-    return Objects.equals(this.initialActive, tenantRequestDTO.initialActive) &&
-        Objects.equals(this.active, tenantRequestDTO.active) &&
+    return Objects.equals(this.active, tenantRequestDTO.active) &&
         Objects.equals(this.contactEmail, tenantRequestDTO.contactEmail) &&
         Objects.equals(this.dateActiveChanged, tenantRequestDTO.dateActiveChanged) &&
         Objects.equals(this.dateCreated, tenantRequestDTO.dateCreated) &&
@@ -228,7 +206,7 @@ public class TenantRequestDTO   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(initialActive, active, contactEmail, dateActiveChanged, dateCreated, description, domain, tenantAdmin);
+    return Objects.hash(active, contactEmail, dateActiveChanged, dateCreated, description, domain, tenantAdmin);
   }
 
   @Override
@@ -236,7 +214,6 @@ public class TenantRequestDTO   {
     StringBuilder sb = new StringBuilder();
     sb.append("class TenantRequestDTO {\n");
     
-    sb.append("    initialActive: ").append(toIndentedString(initialActive)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    contactEmail: ").append(toIndentedString(contactEmail)).append("\n");
     sb.append("    dateActiveChanged: ").append(toIndentedString(dateActiveChanged)).append("\n");

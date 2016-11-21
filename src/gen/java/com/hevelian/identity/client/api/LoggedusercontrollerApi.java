@@ -67,13 +67,17 @@ public class LoggedusercontrollerApi {
 
     /* Build call for changePasswordUsingPOST */
     private com.squareup.okhttp.Call changePasswordUsingPOSTCall(String oldPassword, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = password;
+        Object localVarPostBody = null;
         
 
         // create path and map variables
-        String localVarPath = "/api/LoggedUserService/changePassword".replaceAll("\\{format\\}","json");
+        String localVarPath = "/LoggedUserService/changePassword".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (oldPassword != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "oldPassword", oldPassword));
+        if (password != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -171,7 +175,7 @@ public class LoggedusercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/LoggedUserService/getRoles".replaceAll("\\{format\\}","json");
+        String localVarPath = "/LoggedUserService/getRoles".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

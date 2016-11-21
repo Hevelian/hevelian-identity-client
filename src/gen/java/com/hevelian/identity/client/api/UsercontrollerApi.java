@@ -87,7 +87,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/addRemoveRolesOfUser".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/addRemoveRolesOfUser".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -189,7 +189,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/addRemoveUsersOfRole".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/addRemoveUsersOfRole".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -291,7 +291,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/addRole".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/addRole".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -397,7 +397,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/addUser".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/addUser".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -503,7 +503,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/changePassword".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/changePassword".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -605,7 +605,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/deleteRole".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/deleteRole".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -707,7 +707,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/deleteUser".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/deleteUser".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -809,7 +809,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/getRolesOfUser".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/getRolesOfUser".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -915,7 +915,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/getUsersOfRole".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/getUsersOfRole".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -1016,7 +1016,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/listRoles".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/listRoles".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -1114,7 +1114,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/listUsers".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/listUsers".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -1217,7 +1217,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/updateRoleName".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/updateRoleName".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -1319,7 +1319,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/updateRolesOfUser".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/updateRolesOfUser".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -1421,7 +1421,7 @@ public class UsercontrollerApi {
         
 
         // create path and map variables
-        String localVarPath = "/api/UserService/updateUsersOfRole".replaceAll("\\{format\\}","json");
+        String localVarPath = "/UserService/updateUsersOfRole".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

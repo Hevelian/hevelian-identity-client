@@ -38,10 +38,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import com.hevelian.identity.client.model.EntitlementAttributesDTO;
-import com.hevelian.identity.client.model.PrimitiveResultboolean;
-import com.hevelian.identity.client.model.PrimitiveResultstring;
-import com.hevelian.identity.client.model.EntitlementRequestDTO;
+import com.hevelian.identity.client.model.PAPPolicy;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -49,14 +46,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EntitlementcontrollerApi {
+public class PapcontrollerApi {
     private ApiClient apiClient;
 
-    public EntitlementcontrollerApi() {
+    public PapcontrollerApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public EntitlementcontrollerApi(ApiClient apiClient) {
+    public PapcontrollerApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -68,18 +65,13 @@ public class EntitlementcontrollerApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for getBooleanDecisionUsingPOST */
-    private com.squareup.okhttp.Call getBooleanDecisionUsingPOSTCall(EntitlementAttributesDTO attributes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = attributes;
-        
-        // verify the required parameter 'attributes' is set
-        if (attributes == null) {
-            throw new ApiException("Missing the required parameter 'attributes' when calling getBooleanDecisionUsingPOST(Async)");
-        }
+    /* Build call for testAddPolicyUsingPOST */
+    private com.squareup.okhttp.Call testAddPolicyUsingPOSTCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
         
 
         // create path and map variables
-        String localVarPath = "/EntitlementService/getBooleanDecision".replaceAll("\\{format\\}","json");
+        String localVarPath = "/PAPService/testAddPolicy".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -116,39 +108,33 @@ public class EntitlementcontrollerApi {
     }
 
     /**
-     * getBooleanDecision
+     * testAddPolicy
      * 
-     * @param attributes attributes (required)
-     * @return PrimitiveResultboolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrimitiveResultboolean getBooleanDecisionUsingPOST(EntitlementAttributesDTO attributes) throws ApiException {
-        ApiResponse<PrimitiveResultboolean> resp = getBooleanDecisionUsingPOSTWithHttpInfo(attributes);
-        return resp.getData();
+    public void testAddPolicyUsingPOST() throws ApiException {
+        testAddPolicyUsingPOSTWithHttpInfo();
     }
 
     /**
-     * getBooleanDecision
+     * testAddPolicy
      * 
-     * @param attributes attributes (required)
-     * @return ApiResponse&lt;PrimitiveResultboolean&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrimitiveResultboolean> getBooleanDecisionUsingPOSTWithHttpInfo(EntitlementAttributesDTO attributes) throws ApiException {
-        com.squareup.okhttp.Call call = getBooleanDecisionUsingPOSTCall(attributes, null, null);
-        Type localVarReturnType = new TypeToken<PrimitiveResultboolean>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<Void> testAddPolicyUsingPOSTWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = testAddPolicyUsingPOSTCall(null, null);
+        return apiClient.execute(call);
     }
 
     /**
-     * getBooleanDecision (asynchronously)
+     * testAddPolicy (asynchronously)
      * 
-     * @param attributes attributes (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getBooleanDecisionUsingPOSTAsync(EntitlementAttributesDTO attributes, final ApiCallback<PrimitiveResultboolean> callback) throws ApiException {
+    public com.squareup.okhttp.Call testAddPolicyUsingPOSTAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,23 +155,115 @@ public class EntitlementcontrollerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getBooleanDecisionUsingPOSTCall(attributes, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PrimitiveResultboolean>(){}.getType();
+        com.squareup.okhttp.Call call = testAddPolicyUsingPOSTCall(progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /* Build call for testGetAllUsingGET */
+    private com.squareup.okhttp.Call testGetAllUsingGETCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+
+        // create path and map variables
+        String localVarPath = "/PAPService/testGetAll".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "default" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    /**
+     * testGetAll
+     * 
+     * @return List&lt;PAPPolicy&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<PAPPolicy> testGetAllUsingGET() throws ApiException {
+        ApiResponse<List<PAPPolicy>> resp = testGetAllUsingGETWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * testGetAll
+     * 
+     * @return ApiResponse&lt;List&lt;PAPPolicy&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<PAPPolicy>> testGetAllUsingGETWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = testGetAllUsingGETCall(null, null);
+        Type localVarReturnType = new TypeToken<List<PAPPolicy>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * testGetAll (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call testGetAllUsingGETAsync(final ApiCallback<List<PAPPolicy>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = testGetAllUsingGETCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<PAPPolicy>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for getDecisionByAttributesUsingPOST */
-    private com.squareup.okhttp.Call getDecisionByAttributesUsingPOSTCall(EntitlementAttributesDTO attributes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = attributes;
-        
-        // verify the required parameter 'attributes' is set
-        if (attributes == null) {
-            throw new ApiException("Missing the required parameter 'attributes' when calling getDecisionByAttributesUsingPOST(Async)");
-        }
+    /* Build call for testUpdatePolicyUsingPOST */
+    private com.squareup.okhttp.Call testUpdatePolicyUsingPOSTCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
         
 
         // create path and map variables
-        String localVarPath = "/EntitlementService/getDecisionByAttributes".replaceAll("\\{format\\}","json");
+        String localVarPath = "/PAPService/testUpdatePolicy".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -222,39 +300,33 @@ public class EntitlementcontrollerApi {
     }
 
     /**
-     * getDecisionByAttributes
+     * testUpdatePolicy
      * 
-     * @param attributes attributes (required)
-     * @return PrimitiveResultstring
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrimitiveResultstring getDecisionByAttributesUsingPOST(EntitlementAttributesDTO attributes) throws ApiException {
-        ApiResponse<PrimitiveResultstring> resp = getDecisionByAttributesUsingPOSTWithHttpInfo(attributes);
-        return resp.getData();
+    public void testUpdatePolicyUsingPOST() throws ApiException {
+        testUpdatePolicyUsingPOSTWithHttpInfo();
     }
 
     /**
-     * getDecisionByAttributes
+     * testUpdatePolicy
      * 
-     * @param attributes attributes (required)
-     * @return ApiResponse&lt;PrimitiveResultstring&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrimitiveResultstring> getDecisionByAttributesUsingPOSTWithHttpInfo(EntitlementAttributesDTO attributes) throws ApiException {
-        com.squareup.okhttp.Call call = getDecisionByAttributesUsingPOSTCall(attributes, null, null);
-        Type localVarReturnType = new TypeToken<PrimitiveResultstring>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<Void> testUpdatePolicyUsingPOSTWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = testUpdatePolicyUsingPOSTCall(null, null);
+        return apiClient.execute(call);
     }
 
     /**
-     * getDecisionByAttributes (asynchronously)
+     * testUpdatePolicy (asynchronously)
      * 
-     * @param attributes attributes (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDecisionByAttributesUsingPOSTAsync(EntitlementAttributesDTO attributes, final ApiCallback<PrimitiveResultstring> callback) throws ApiException {
+    public com.squareup.okhttp.Call testUpdatePolicyUsingPOSTAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -275,115 +347,8 @@ public class EntitlementcontrollerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getDecisionByAttributesUsingPOSTCall(attributes, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PrimitiveResultstring>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for getDecisionUsingPOST */
-    private com.squareup.okhttp.Call getDecisionUsingPOSTCall(EntitlementRequestDTO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = request;
-        
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling getDecisionUsingPOST(Async)");
-        }
-        
-
-        // create path and map variables
-        String localVarPath = "/EntitlementService/getDecision".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/xml", "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/xml", "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "default" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    /**
-     * getDecision
-     * 
-     * @param request request (required)
-     * @return PrimitiveResultstring
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PrimitiveResultstring getDecisionUsingPOST(EntitlementRequestDTO request) throws ApiException {
-        ApiResponse<PrimitiveResultstring> resp = getDecisionUsingPOSTWithHttpInfo(request);
-        return resp.getData();
-    }
-
-    /**
-     * getDecision
-     * 
-     * @param request request (required)
-     * @return ApiResponse&lt;PrimitiveResultstring&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PrimitiveResultstring> getDecisionUsingPOSTWithHttpInfo(EntitlementRequestDTO request) throws ApiException {
-        com.squareup.okhttp.Call call = getDecisionUsingPOSTCall(request, null, null);
-        Type localVarReturnType = new TypeToken<PrimitiveResultstring>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * getDecision (asynchronously)
-     * 
-     * @param request request (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getDecisionUsingPOSTAsync(EntitlementRequestDTO request, final ApiCallback<PrimitiveResultstring> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getDecisionUsingPOSTCall(request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PrimitiveResultstring>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        com.squareup.okhttp.Call call = testUpdatePolicyUsingPOSTCall(progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
         return call;
     }
 }
